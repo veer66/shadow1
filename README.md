@@ -65,6 +65,12 @@ mkdir public
 
 ```
 
+## รับ shadow-cljs
+
+```
+npx shadow-cljs watch webapp
+```
+
 ## ลอง
 
 เปิดเว็บ localhost:8080
