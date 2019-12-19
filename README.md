@@ -5,7 +5,7 @@
 ## รัน docker image
 
 ```
-sudo docker run --rm -it -u 1000 --net=host -v (pwd):/work -e HOME=/work -w /work veer66/node-jdk bash
+sudo docker run --rm -it -u 1000 --net=host -v $(pwd):/work -e HOME=/work -w /work veer66/node-jdk bash
 ```
 
 ## สร้าง project 
