@@ -1,6 +1,8 @@
 (ns webapp.core
   (:require [reagent.core :as r]
-            [re-frame.core :as rf]))
+            [re-frame.core :as rf]
+            ["@material-ui/core" :as mui]
+            ))
 
 (def msg "Hello")
 
@@ -25,9 +27,13 @@
    [:h1 "DEMO"]
    [:p msg]
    [:p @(rf/subscribe [:cnt])]
-   [:input {:type "button"
-            :value "+1"
-            :on-click #(rf/dispatch [:plusone])}]])
+   [:> mui/Button
+      {:variant "contained"
+       :color "primary"
+       :on-click #(rf/dispatch [:plusone])
+       }
+      "+1"
+      ]])
 
 (defn render
   []
