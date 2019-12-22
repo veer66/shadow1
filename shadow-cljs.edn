@@ -5,7 +5,8 @@
   "src/test"]
 
  :dependencies
- [[reagent "0.8.1"]]
+ [[re-frame "0.10.9"]
+  [reagent "0.8.1"]]
 
  :dev-http {8080 "public"}
  :builds
