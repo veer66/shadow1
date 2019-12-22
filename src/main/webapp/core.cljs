@@ -1,19 +1,18 @@
-(ns webapp.core)
+(ns webapp.core
+  (:require [reagent.core :as r]))
 
 (def msg "Hello")
 
-(defn remove-all-children [elem]
-  (loop [elem elem]
-    (when-let [child (.-firstChild elem)]
-      (do
-        (.removeChild elem child)
-        (recur elem)))))
+(defn ui
+  []
+  [:div
+   [:h1 "DEMO"]
+   [:p msg]])
 
-(defn render []
-  (let [p-main (js/document.querySelector "p#main")
-        txt (js/document.createTextNode msg)]
-    (js/console.log (remove-all-children p-main))
-    (.appendChild p-main txt)))
+(defn render
+  []
+  (r/render [ui]
+            (js/document.querySelector "div#app")))
 
 (defn ^:dev/after-load reload []
   (render))
