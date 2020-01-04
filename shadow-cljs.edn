@@ -6,7 +6,9 @@
 
  :dependencies
  [[re-frame "0.10.9"]
-  [reagent "0.8.1"]]
+  [reagent "0.8.1"]
+  [cider/cider-nrepl "0.23.0-SNAPSHOT"]
+  [weasel "0.7.0"]]
 
  :dev-http {8080 "public"}
  :builds

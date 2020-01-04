@@ -2,8 +2,10 @@
   (:require [reagent.core :as r]
             [re-frame.core :as rf]
             ["@material-ui/core" :as mui]
+            ["material-ui-chip-input" :as muci]
             ))
 
+(def ChipInput muci/default)
 (def msg "Hello")
 
 (rf/reg-event-db
@@ -24,21 +26,20 @@
 (defn ui
   []
   [:div
-   [:h1 "DEMO"]
-   [:p msg]
-   [:p @(rf/subscribe [:cnt])]
-   [:> mui/Button
-      {:variant "contained"
-       :color "primary"
-       :on-click #(rf/dispatch [:plusone])
-       }
-      "+1"
-      ]])
+   [:h1 "ChipInput"]
+   [:> ChipInput]
+   [:> mui/Button {} "KAKA"]
+   ])
+
+(prn "@@@")
 
 (defn render
   []
   (r/render [ui]
             (js/document.querySelector "div#app")))
+
+
+(r/create-element "div")
 
 (defn ^:dev/after-load reload []
   (rf/clear-subscription-cache!)
