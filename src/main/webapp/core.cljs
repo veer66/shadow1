@@ -2,44 +2,28 @@
   (:require [reagent.core :as r]
             [re-frame.core :as rf]
             ["@material-ui/core" :as mui]
-            ["material-ui-chip-input" :as muci]
-            ))
-
-(def ChipInput muci/default)
-(def msg "Hello")
-
-(rf/reg-event-db
- :initialize
- (fn [_ _]
-   {:cnt 1}))
-
-(rf/reg-event-db
- :plusone
- (fn [db _]
-   (update db :cnt inc)))
-
-(rf/reg-sub
- :cnt
- (fn [db _]
-   (:cnt db)))
+            ["@material-ui/lab" :as mui-lab]))
 
 (defn ui
   []
   [:div
-   [:h1 "ChipInput"]
-   [:> ChipInput]
-   [:> mui/Button {} "KAKA"]
-   ])
-
-(prn "@@@")
+   [:h1 "Auto-complete"]
+   [:> mui-lab/Autocomplete
+    {:render-input #(r/create-element mui/TextField
+                                      (js/Object.assign #js{:fullWidth true
+                                                            :variant "outlined"}
+                                                        %))
+     :options ["toto" "tata"]}]])
 
 (defn render
   []
   (r/render [ui]
             (js/document.querySelector "div#app")))
 
-
-(r/create-element "div")
+(rf/reg-event-db
+ :initialize
+ (fn [_ _]
+   {}))
 
 (defn ^:dev/after-load reload []
   (rf/clear-subscription-cache!)
