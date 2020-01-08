@@ -13,7 +13,9 @@
                                       (js/Object.assign #js{:fullWidth true
                                                             :variant "outlined"}
                                                         %))
-     :options ["toto" "tata"]}]])
+     :options (clj->js [{:name "toto"}  {:name "tata"}])
+     :get-option-label #(.-name %)}]])
+
 
 (defn render
   []
