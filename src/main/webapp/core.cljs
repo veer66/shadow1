@@ -1,8 +1,7 @@
 (ns webapp.core
   (:require [reagent.core :as r]
             [re-frame.core :as rf]
-            ["@material-ui/core" :as mui]
-            ["@material-ui/lab" :as mui-lab]))
+            ["@material-ui/core" :as mui]))
 
 (defn ui
   []
