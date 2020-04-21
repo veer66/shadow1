@@ -3,16 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "devDependencies": {
-    "shadow-cljs": "2.8.83"
+    "shadow-cljs": "2.8.98"
   },
   "dependencies": {
-    "@material-ui/core": "^4.8.0",
-    "@material-ui/lab": "^4.0.0-alpha.39",
+    "@material-ui/core": "^4.9.11",
     "create-react-class": "^15.6.3",
-    "hoist-non-react-statics": "^3.3.1",
-    "material-ui-chip-input": "^2.0.0-beta.2",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-transition-group": "^4.3.0"
+    "react-dom": "^16.12.0"
   }
 }
