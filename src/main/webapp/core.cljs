@@ -6,15 +6,7 @@
 (defn ui
   []
   [:div
-   [:h1 "Auto-complete"]
-   [:> mui-lab/Autocomplete
-    {:render-input #(r/create-element mui/TextField
-                                      (js/Object.assign #js{:fullWidth true
-                                                            :variant "outlined"}
-                                                        %))
-     :options (clj->js [{:name "toto"}  {:name "tata"}])
-     :get-option-label #(.-name %)}]])
-
+   [:h1 "Auto-complete"]])
 
 (defn render
   []
